@@ -7,8 +7,7 @@ def main():
 
 
 def is_valid(s):
-    len(s) >= 2
-    return
+        
         
        
 
