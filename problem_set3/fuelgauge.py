@@ -1,5 +1,10 @@
 def main():
+<<<<<<< HEAD
     
+=======
+
+    # gather fraction from user
+>>>>>>> 46e5249c99c22e827bb78aec189a814aa9584493
     fuel = input("Fraction: ")
     x, y = fuel.strip().split("/")
 
