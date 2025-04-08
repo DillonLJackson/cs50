@@ -1,39 +1,42 @@
 def main():
 
-
-    months = ["January",
-              "February",
-              "March",
-              "April",
-              "May",
-              "June",
-              "July",
-              "August",
-              "September",
-              "October",
-              "November",
-              "December"
+    list_month = [{"monthname": "January", "monthday": "01"},
+              {"monthname": "February", "monthday": "02"},
+              {"monthname": "March", "monthday": "03"},
+              {"monthname": "April", "monthday": "04"},
+              {"monthname": "May", "monthday": "05"},
+              {"monthname": "June", "monthday": "06"},
+              {"monthname":"July", "monthday": "07"},
+              {"monthname": "August", "monthday": "08"},
+              {"monthname": "September", "monthday": "09"},
+              {"monthname": "October", "monthday": "10"},
+              {"monthname": "November", "monthday": "11"},
+              {"monthname": "December", "monthday": "12"}
               ]
-    
-    while True:
+
+    date = input("please input a date in anno Domini format: ")
+    while date != "00/00/0000":
+
         try:
-            
-            date = input("Please enter a date in MM/DD/YY style: ")
-            month, day, year = date.strip().split("/")
-
-            month = int(month)
-            day = int(day)
-            year = int(year)
-
-            
+            month, year = date.split(",")
+            month, day = month.strip().split(" ")
+            year = year.strip()
+            for mon in list_month:
+                    if month == (mon["monthname"]): 
+                        print('{2}-{1}-{0}'.format(day.zfill(2), (mon["monthday"]), year))
 
         except ValueError:
-            print("please enter date in the correct format.")
-            break
+            try:
+                month, day, year = date.strip("").split("/")
+                print('{2}-{1}-{0}'.format(day.zfill(2), month.zfill(2), year))
+                pass
+            except ValueError:
+                 pass
+        
+
+        date = input("please input a date in anno Domini format: ")
             
-        print(date)
-        
-        
 
-
+            
+    
 main()
