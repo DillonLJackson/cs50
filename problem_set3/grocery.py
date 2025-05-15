@@ -6,22 +6,16 @@
 
 def main():
         
-        shopping_cart = input("")
-        while shopping_cart != EOFError:
-    
-            try:
-                cart = {apple}
+    shopping_list = []
 
-                shopping_cart = input("")
-
-            except EOFError:
-                print(cart.get(shopping_cart))
-                exit
-  
-
-        
-               
-
-
+    while True:
+        try:
+            shopping_cart = input("")
+            shopping_list.append(shopping_cart)
+            shopping_list.sort()
+        except EOFError:
+            break
+    print(shopping_list)
+                       
 
 main()
